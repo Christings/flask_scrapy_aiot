@@ -17,3 +17,11 @@ class ChinacwaItem(scrapy.Item):
     article_abstract = scrapy.Field()
     article_url = scrapy.Field()
     article_content = scrapy.Field()
+
+
+# iot——国家农业物联网
+class IotItem(scrapy.Item):
+    article_title = scrapy.Field()
+    article_keywords = scrapy.Field()
+    article_url = scrapy.Field()
+    article_content = scrapy.Field()

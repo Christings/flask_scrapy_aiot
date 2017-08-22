@@ -18,15 +18,7 @@ class ChinacwaSpider(CrawlSpider):
              follow=True)
     ]
 
-    # def parse_url(self, response):
-    #     # print(response.body)
-    #     # item = ChinacwaItem()
-    #     sel = Selector(response)
-    #     url = str(response.url)
-    #     # print("level_url:", level1_url)
-    #     # level1_name = sel.xpath('//div[@class="container"]/div[1]/a/text()').extract()
-    #     # print("level1_name:", level1_name)
-    #     yield scrapy.Request(url, callback=self.parse, meta={'url': url})
+    #     # level1_name = sel.xpath('//div[@class="container"]/div[1]/a/text()').extract() 提取大目录
 
     def parse_item(self, response):
         item = ChinacwaItem()
@@ -54,6 +46,7 @@ class ChinacwaSpider(CrawlSpider):
         article_content = sel.xpath(
             '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()
         print("article_content:", article_content)
+
         item['article_title'] = article_title
         item['article_keywords'] = article_keywords
         item['article_url'] = article_url
