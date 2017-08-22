@@ -7,7 +7,7 @@ from ..items import ChinacwaItem
 from scrapy.selector import Selector
 import re
 
-
+# 中国智慧农业网
 class ChinacwaSpider(CrawlSpider):
     name = 'ChinacwaSpider'
     allowed_domains = ['chinacwa.com']
