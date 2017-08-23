@@ -31,12 +31,14 @@ class IotSpider(CrawlSpider):
 
         item['article_title'] = article_title
         item['article_keywords'] = article_keywords
-        item['article_title'] = article_title
-        item['article_title'] = article_title
-        item['article_title'] = article_title
+        item['article_abstract'] = article_abstract
+        item['article_url'] = article_url
+        item['article_content'] = article_content
 
         print("article_title:", article_title)
         print("article_keywords:", article_keywords)
         print("article_abstract:", article_abstract)
         print("article_url:", article_url)
         print("article_content:", article_content)
+
+        yield item
