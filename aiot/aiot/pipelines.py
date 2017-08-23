@@ -21,7 +21,7 @@ class ChinacwaPipeline(object):
         if item['article_title']:
             postItem = dict(item)
             self.coll.insert(postItem)
-            print("插入成功")
+            print("插入成功"),
             return item
 
 
@@ -36,5 +36,20 @@ class IotPipeline(object):
         if item['article_title']:
             postItem = dict(item)
             self.coll.insert(postItem)
-            print("插入成功")
+            print("插入")
+            return item
+
+
+# ny135——中国农业物联网
+class Ny135Pipeline(object):
+    def __init__(self):
+        self.client = pymongo.MongoClient(host=settings['MONGO_HOST'], port=settings['MONGO_PORT'])
+        self.db = self.client[settings['MONGO_DB']]
+        self.coll = self.db[settings['MONGO_COLL2']]
+
+    def process_item(self, item, spider):
+        if item['article_title']:
+            postItem = dict(item)
+            self.coll.insert(postItem)
+            print("lala")
             return item

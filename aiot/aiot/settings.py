@@ -65,7 +65,8 @@ ROBOTSTXT_OBEY = True
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'aiot.pipelines.ChinacwaPipeline': 300,
-    'aiot.pipelines.IotPipeline': 301,
+    'aiot.pipelines.IotPipeline': 300,
+    'aiot.pipelines.Ny135Pipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -95,5 +96,6 @@ MONGO_PORT = 27017  # 端口号
 MONGO_DB = "aiot"  # 库名
 MONGO_COLL = "chinacwa"  # collection名
 MONGO_COLL1 = "iot"  # collection名
+MONGO_COLL2 = "ny135"  # collection名
 # MONGO_USER = "zhangsan"
 # MONGO_PSW = "123456"

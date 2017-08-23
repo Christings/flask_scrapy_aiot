@@ -26,3 +26,12 @@ class IotItem(scrapy.Item):
     article_abstract = scrapy.Field()
     article_url = scrapy.Field()
     article_content = scrapy.Field()
+
+
+# ny135——中国农业物联网
+class Ny135Item(scrapy.Item):
+    article_title = scrapy.Field()
+    article_keywords = scrapy.Field()
+    article_abstract = scrapy.Field()
+    article_url = scrapy.Field()
+    article_content = scrapy.Field()
