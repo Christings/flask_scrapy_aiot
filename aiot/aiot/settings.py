@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'aiot.spiders'
 # USER_AGENT = 'aiot (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -26,7 +26,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
 # CONCURRENT_REQUESTS_PER_IP = 16
@@ -64,9 +64,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'aiot.pipelines.ChinacwaPipeline': 300,
-    'aiot.pipelines.IotPipeline': 300,
-    'aiot.pipelines.Ny135Pipeline': 300,
+    'aiot.pipelines.AiotPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,8 +92,6 @@ ITEM_PIPELINES = {
 MONGO_HOST = "127.0.0.1"  # 主机IP
 MONGO_PORT = 27017  # 端口号
 MONGO_DB = "aiot"  # 库名
-MONGO_COLL = "chinacwa"  # collection名
-MONGO_COLL1 = "iot"  # collection名
-MONGO_COLL2 = "ny135"  # collection名
+# MONGO_COLL = "chinacwa"  # collection名
 # MONGO_USER = "zhangsan"
 # MONGO_PSW = "123456"
