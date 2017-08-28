@@ -4,8 +4,10 @@ from scrapy.spiders import CrawlSpider, Rule
 # from scrapy.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.linkextractors import LinkExtractor
 from ..items import ChinacwaItem
+from scrapy_aiot.aiot.aiot.items import ChinacwaItem
 from scrapy.selector import Selector
 import re
+
 
 # 中国智慧农业网
 class ChinacwaSpider(CrawlSpider):
@@ -35,8 +37,8 @@ class ChinacwaSpider(CrawlSpider):
         #      '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p/img/@src').extract()
         # print("article_imageurl:", article_imageurl)
 
-        # article_abstract = sel.xpath(
-        #      '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p[2]').xpath('string(.)').extract()
+        article_abstract = sel.xpath(
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p[2]/span/text()').extract()
         # print("article_abstract:", article_abstract)
         article_url = response.url
 
@@ -47,8 +49,9 @@ class ChinacwaSpider(CrawlSpider):
             '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()
         print("article_content:", article_content)
 
-        item['article_title'] = article_title
-        item['article_keywords'] = article_keywords
+        item['article_title'] = str(article_title)
+        item['article_keywords'] = str(article_keywords)
         item['article_url'] = article_url
-        item['article_content'] = article_content
+        item['article_abstract'] = str(article_abstract)
+        item['article_content'] = str(article_content)
         yield item
