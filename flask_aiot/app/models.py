@@ -2,9 +2,11 @@ from . import mongo
 
 class Chinacwa(mongo.Document):
     article_title=mongo.StringField(required=True)
-    article_title=mongo.StringField(required=True)
-    article_title=mongo.StringField(required=True)
-    article_title=mongo.StringField(required=True)
+    article_keywords=mongo.StringField(required=True)
+    article_url=mongo.StringField(required=True)
+    article_content=mongo.StringField(required=True)
+
+    meta={'collection':'chinacwa'}
 
 class Movies(mongo.Document):
     movie_id = mongo.StringField(required=True)
