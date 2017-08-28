@@ -4,30 +4,23 @@
 
     <div id="entries">
         <ul>
-        {% for movie in movies %}
-            <li>
-            <div class="name-year"> <a href="http://www.imdb.com/title/{{movie.movie_id}}/">{{movie.name}}</a> -
-                <a href="/produced/{{movie.produced.year}}">{{movie.produced.year}}</a>
-            </div>
+            {% for article in articles %}
+                <li>
+                    <div class="name-year">
+                        <a href="http://www.imdb.com/title/{{ article.article_title }}/">{{ article.article_title }}</a>
+                        -
+                        {#                        <a href="/produced/{{ article.article_title }}">{{ article.article_title }}</a>#}
+                    </div>
 
-            <div class="rating-base">
-                <a href="/rating/{{movie.rating}}">{{movie.rating}}</a>
-                <span>/ 10 - </span>
+                    <div class="rating-base">
+                        <a href="/rating/{{ article.article_title }}">{{ article.article_keywords }}</a>
+                        <span>/ 10 - </span>
+                        <a href="/rating/{{ article.article_title }}">{{ article.article_url }}</a>
+                    </div>
 
-                <span>
-                    {% for genre in movie.genre %}
-                    <a href="/genre/{{genre}}">{{genre}}</a>
-                        {% if genre != movie.genre[-1] %}
-                            |
-                        {% endif %}
-                    {% endfor %}
-                </span>
-            </div>
-
-            <div class="description"> {{ movie.description }}</div>
-
-            </li>
-        {% endfor %}
+                    <div class="description"> {{ article.article_content }}</div>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 
