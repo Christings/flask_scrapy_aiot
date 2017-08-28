@@ -1,12 +1,33 @@
 from . import mongo
 
-class Chinacwa(mongo.Document):
-    article_title=mongo.StringField(required=True)
-    article_keywords=mongo.StringField(required=True)
-    article_url=mongo.StringField(required=True)
-    article_content=mongo.StringField(required=True)
 
-    meta={'collection':'chinacwa'}
+class Chinacwa(mongo.Document):
+    article_title = mongo.StringField(required=True)
+    article_keywords = mongo.StringField(required=True)
+    article_url = mongo.StringField(required=True)
+    article_content = mongo.StringField(required=True)
+
+    meta = {'collection': 'chinacwa'}
+
+
+class Iot(mongo.Document):
+    article_title = mongo.StringField(required=True)
+    article_keywords = mongo.StringField(required=True)
+    article_url = mongo.StringField(required=True)
+    article_abstract = mongo.StringField(required=True)
+    article_content = mongo.StringField(required=True)
+
+    meta = {'collection': 'iot'}
+
+
+class Ny135(mongo.Document):
+    article_title = mongo.StringField(required=True)
+    article_keywords = mongo.StringField(required=True)
+    article_url = mongo.StringField(required=True)
+    article_abstract = mongo.StringField(required=True)
+    article_content = mongo.StringField(required=True)
+    meta = {'collection': 'ny135'}
+
 
 class Movies(mongo.Document):
     movie_id = mongo.StringField(required=True)
