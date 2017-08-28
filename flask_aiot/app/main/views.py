@@ -2,8 +2,8 @@ from flask import Blueprint,request,render_template
 from flask.views import MethodView
 from ..models import Movies
 from ..models import Chinacwa
-# from ..models import Iot
-# from ..models import Ny135
+from ..models import Iot
+from ..models import Ny135
 
 from . import main
 from datetime import datetime
@@ -22,12 +22,12 @@ def ShowChinacwaView():
     chinacwa = Chinacwa.objects.all()
     return render_template('list.html',articles=chinacwa)
 
-# @main.route('/show_iot/',methods=['GET'])
-# def ShowIotcwaView():
-#     iot = Iot.objects.all()
-#     return render_template('list.html',articles=iot)
-#
-# @main.route('/show_ny135/',methods=['GET'])
-# def ShowNy135cwaView():
-#     ny135 = Ny135.objects.all()
-#     return render_template('list.html',articles=ny135)
+@main.route('/show_iot/',methods=['GET'])
+def ShowIotcwaView():
+    iot = Iot.objects.all()
+    return render_template('list.html',articles=iot)
+
+@main.route('/show_ny135/',methods=['GET'])
+def ShowNy135cwaView():
+    ny135 = Ny135.objects.all()
+    return render_template('list.html',articles=ny135)
