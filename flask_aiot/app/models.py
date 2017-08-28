@@ -1,5 +1,10 @@
 from . import mongo
 
+class Chinacwa(mongo.Document):
+    article_title=mongo.StringField(required=True)
+    article_title=mongo.StringField(required=True)
+    article_title=mongo.StringField(required=True)
+    article_title=mongo.StringField(required=True)
 
 class Movies(mongo.Document):
     movie_id = mongo.StringField(required=True)
