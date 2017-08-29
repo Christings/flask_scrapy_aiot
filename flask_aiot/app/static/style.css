@@ -116,7 +116,8 @@ a {
     margin: 0px 5px 5px 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: SimSun-ExtB;
     font-size: 16px;
     text-align: center;
 }
