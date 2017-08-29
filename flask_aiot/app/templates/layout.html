@@ -5,6 +5,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+{#      {% extends "bootstrap/base.html" %}#}
   </head>
 
   <body OnLoad="document.searchform.text.focus();">
@@ -36,7 +37,7 @@
             </div>
 
             {% block content %}
-            {% endblock %} 
+            {% endblock %}
 
         </div>
 

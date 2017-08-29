@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
 
 {% block content %}
 
@@ -22,4 +25,12 @@
         </ul>
     </div>
 
+    {% if pagination %}
+        <div class="pagination">
+            {{ macros.pagination_widget(pagination, '.ShowChinacwaView') }}
+        </div>
+    {% endif %}
+
 {% endblock %}
+
+
