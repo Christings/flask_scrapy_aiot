@@ -7,15 +7,13 @@
             {% for article in articles %}
                 <li>
                     <div class="name-year">
-                        <a href="http://www.imdb.com/title/{{ article.article_title }}/">{{ article.article_title }}</a>
-                        -
-                        {#                        <a href="/produced/{{ article.article_title }}">{{ article.article_title }}</a>#}
+                        <a href="{{ article.article_url }}">{{ article.article_title }}</a>
                     </div>
 
                     <div class="rating-base">
-                        <a href="/rating/{{ article.article_title }}">{{ article.article_keywords }}</a>
-                        <span>/ 10 - </span>
-                        <a href="/rating/{{ article.article_title }}">{{ article.article_url }}</a>
+                        <a>{{ article.article_keywords }}</a>
+                        <span> ---- </span>
+                        <a href="{{ article.article_url }}">{{ article.article_url }}</a>
                     </div>
 
                     <div class="description"> {{ article.article_abstract }}</div>
