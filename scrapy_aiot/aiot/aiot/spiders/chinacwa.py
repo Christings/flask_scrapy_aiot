@@ -27,17 +27,17 @@ class ChinacwaSpider(CrawlSpider):
         # 文章标题、关键字、图片地址、摘要、内容地址、内容
         # route=sel.xpath('//div[@class="content"]/div[@class="content_left"]')
         article_title = sel.xpath(
-            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/h3/text()').extract()
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/h3/text()').extract()[0]
         print("article_title:", article_title)
         article_keywords = sel.xpath(
-            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/p/text()').extract()
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/p/text()').extract()[0]
         print("article_keywords:", article_keywords)
         # article_imageurl = sel.xpath(
         #      '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p/img/@src').extract()
         # print("article_imageurl:", article_imageurl)
 
         article_abstract = sel.xpath(
-            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p[2]/span/text()').extract()
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p[2]/span/text()').extract()[0]
         # print("article_abstract:", article_abstract)
         article_url = response.url
 
@@ -45,7 +45,7 @@ class ChinacwaSpider(CrawlSpider):
         # patternr1 = re.compile(p)
         # print("aaa:", patternr1.findall(r'str(sel)'))
         article_content = sel.xpath(
-            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()[0]
         print("article_content:", article_content)
 
         item['article_title'] = article_title
