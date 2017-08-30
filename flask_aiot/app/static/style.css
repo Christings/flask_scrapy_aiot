@@ -224,7 +224,6 @@ a {
     color: black;
     font-size: 14px;
     font-weight: normal;
-    /*font-style: italic;*/
     padding: 5px;
     margin-bottom: 2px;
     border-bottom-left-radius: 5px 5px;
@@ -233,4 +232,5 @@ a {
 
 .pagination{
     text-align: center;
+    font-size: 30px;
 }
