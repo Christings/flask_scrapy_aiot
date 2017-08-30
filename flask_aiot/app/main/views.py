@@ -17,26 +17,29 @@ from datetime import datetime
 @main.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+    return render_template('index.html')
 
 
 @main.route('/show_chinacwa/', methods=['GET'])
-def ShowChinacwaView(page=1):
-    # page=request.args.get('page',1,type=int)
-    pagination = Chinacwa.objects.paginate(page=page, per_page=20)
-    # chinacwa=pagination.items
-    chinacwa = Chinacwa.objects.all()
+def ShowChinacwaView():
+    page=request.args.get('page',1,type=int)
+    pagination = Chinacwa.objects.paginate(page=page, per_page=10,error_out=False)
+    chinacwa=pagination.items
+    # chinacwa = Chinacwa.objects.all()
     return render_template('list.html', articles=chinacwa, pagination=pagination)
 
 
 @main.route('/show_iot/', methods=['GET'])
 def ShowIotcwaView(page=1):
-    iot = Iot.objects.all()
+    page=request.args.get('page',1,type=int)
     pagination = Iot.objects.paginate(page=page, per_page=20)
+    iot = pagination.items
     return render_template('list.html', articles=iot,pagination=pagination)
 
 
 @main.route('/show_ny135/', methods=['GET'])
 def ShowNy135cwaView(page=1):
-    ny135 = Ny135.objects.all()
+    page=request.args.get('page',1,type=int)
     pagination = Ny135.objects.paginate(page=page, per_page=20)
+    ny135 = pagination.items
     return render_template('list.html', articles=ny135,pagination=pagination)
