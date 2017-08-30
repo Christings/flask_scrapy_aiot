@@ -115,7 +115,7 @@ a {
 
 #naventries li {
     border: 1px solid rgba(113, 101, 93, 0.47);
-    margin: 0px 5px 5px 5px;
+    margin: 0px 5px 20px 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -147,8 +147,8 @@ a {
 }
 
 .input-group {
-    border: 3px solid #0076a3;
-    border-radius: 10px 10px;
+    /*border: 3px solid #0076a3;*/
+    /*border-radius: 10px 10px;*/
     width: 108%;
 }
 
@@ -198,7 +198,7 @@ a {
 }
 
 .name-year a {
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .rating-base {
@@ -224,7 +224,7 @@ a {
     color: black;
     font-size: 14px;
     font-weight: normal;
-    font-style: italic;
+    /*font-style: italic;*/
     padding: 5px;
     margin-bottom: 2px;
     border-bottom-left-radius: 5px 5px;
