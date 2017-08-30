@@ -1,10 +1,8 @@
 {% extends "layout.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
-
 {% block content %}
-
+    {{ super() }}
     <div id="entries">
         <ul>
             {% for article in articles %}
@@ -25,12 +23,17 @@
         </ul>
     </div>
 
+
     {% if pagination %}
-        <div class="pagination">
+        <ul class="pagination">
             {{ macros.pagination_widget(pagination, '.ShowChinacwaView') }}
-        </div>
+        </ul>
     {% endif %}
 
 {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}
 
 

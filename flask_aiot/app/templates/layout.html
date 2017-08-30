@@ -1,27 +1,26 @@
 <!doctype html>
 <html>
-  <head>
-    <title>My IMDB</title>
+<head>
+    <title>AIOT</title>
     <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-{#      {% extends "bootstrap/base.html" %}#}
-  </head>
+    {% extends "bootstrap/base.html" %}
 
-  <body OnLoad="document.searchform.text.focus();">
+</head>
+{% block body %}
+    <body OnLoad="document.searchform.text.focus();">
 
     <header>AIOT</header>
 
     <div id="main">
-
         <div id="nav">
             <div id="naventries">
-                <ul>
+                <ul class="nav nav-pills nav-stacked">
+
                     <li><a href="/show_chinacwa">中国智慧农业网</a></li>
                     <li><a href="/show_iot">国家农业物联网</a></li>
                     <li><a href="/show_ny135">中国农业物联网</a></li>
-                    <li><a href="/dontwatch">Don't Watch</a></li>
-                    <li><a href="/showall">Show All</a></li>
                 </ul>
             </div>
         </div>
@@ -29,9 +28,17 @@
         <div id="container">
 
             <div id="tfheader">
-                <form name="searchform" id="tfsearch" method="POST" action="/search">
-                    <input type="text" class="tfinput" name="text" size="50" maxlength="200" placeholder="name, rating, genre, year">
-                    <input type="submit" value=">" class="tfbutton">
+                <form class="bs-example bs-example-form" role="form">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="search">
+                                <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
                 </form>
                 <div class="tfclear"></div>
             </div>
@@ -41,11 +48,15 @@
 
         </div>
 
-        <div id="aside"></div>
+        <div id="aside">
+        </div>
+
 
     </div>
 
     <footer>scrappy - mongodb - flask</footer>
-    
-  </body>
+
+    </body>
+{% endblock %}
+
 </html>
