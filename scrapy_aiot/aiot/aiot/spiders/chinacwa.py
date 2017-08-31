@@ -14,7 +14,7 @@ class ChinacwaSpider(CrawlSpider):
     allowed_domains = ['chinacwa.com']
     start_urls = ['http://www.chinacwa.com']
     rules = [
-        Rule(LinkExtractor(allow=('/chcontents/')),
+        Rule(LinkExtractor(allow=('/chcontents/'), deny=('/chcontents/gywm/', '/chcontents/nycs/')),
              callback='parse_item',
              follow=True)
     ]

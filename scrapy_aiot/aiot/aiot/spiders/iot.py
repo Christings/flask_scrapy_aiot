@@ -22,7 +22,7 @@ class IotSpider(CrawlSpider):
         sel = Selector(response)
         article_title = sel.xpath('//div[@class="m"]/div[1]/div[@class="left_box"]/h1[@id="title"]/text()').extract()[0]
         article_keywords = sel.xpath(
-            '//div[@class="m"]/div[1]/div[@class="left_box"]/div[@class="keytags"]/a/text()').extract()[0]
+            '//div[@class="m"]/div[1]/div[@class="left_box"]/div[@class="keytags"]/a/text()').extract()
         article_abstract = sel.xpath(
             '//div[@class="m"]/div[1]/div[@class="left_box"]/div[@class="introduce"]/text()').extract()[0]
         article_url = response.url
