@@ -24,16 +24,22 @@
     </div>
 
 
-    {% if pagination %}
+    {% if pagination_chinacwa %}
         <ul class="pagination">
-            {{ macros.pagination_widget(pagination, '.ShowChinacwaView') }}
+            {{ macros.pagination_widget(pagination_chinacwa, '.ShowChinacwaView') }}
+        </ul>
+    {% endif %}
+    {% if pagination_iot %}
+        <ul class="pagination">
+            {{ macros.pagination_widget(pagination_iot, '.ShowIotView') }}
+        </ul>
+    {% endif %}
+    {% if pagination_ny135 %}
+        <ul class="pagination">
+            {{ macros.pagination_widget(pagination_ny135, '.ShowNy135View') }}
         </ul>
     {% endif %}
 
 {% endblock %}
-
-    {% block footer %}
-
-    {% endblock %}
 
 
