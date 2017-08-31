@@ -11,6 +11,7 @@ import scrapy
 # chinacwa——中国智慧农业网
 class ChinacwaItem(scrapy.Item):
     # 文章标题、关键字、图片地址、摘要、内容地址、内容
+    article_id = scrapy.Field()
     article_title = scrapy.Field()
     article_keywords = scrapy.Field()
     article_imageurl = scrapy.Field()
@@ -21,6 +22,7 @@ class ChinacwaItem(scrapy.Item):
 
 # iot——国家农业物联网
 class IotItem(scrapy.Item):
+    article_id = scrapy.Field()
     article_title = scrapy.Field()
     article_keywords = scrapy.Field()
     article_abstract = scrapy.Field()
@@ -30,6 +32,7 @@ class IotItem(scrapy.Item):
 
 # ny135——中国农业物联网
 class Ny135Item(scrapy.Item):
+    article_id = scrapy.Field()
     article_title = scrapy.Field()
     article_keywords = scrapy.Field()
     article_abstract = scrapy.Field()
