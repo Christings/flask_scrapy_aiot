@@ -45,9 +45,10 @@ class ChinacwaSpider(CrawlSpider):
         # patternr1 = re.compile(p)
         # print("aaa:", patternr1.findall(r'str(sel)'))
         article_content = sel.xpath(
-            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()[0]
+            '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()
         print("article_content:", article_content)
 
+        item['article_url'] = int(article_url.split('/')[-1].split('.')[0])
         item['article_title'] = article_title
         item['article_keywords'] = article_keywords
         item['article_url'] = article_url
