@@ -38,3 +38,14 @@ class Ny135Item(scrapy.Item):
     article_abstract = scrapy.Field()
     article_url = scrapy.Field()
     article_content = scrapy.Field()
+
+
+# productprice——农产品价格
+class ProductpriceItem(scrapy.Item):
+    product_name = scrapy.Field()
+    product_lowestprice = scrapy.Field()
+    product_averageprice = scrapy.Field()
+    product_highestprice = scrapy.Field()
+    product_specification = scrapy.Field()
+    product_unit = scrapy.Field()
+    product_releasedate = scrapy.Field()
