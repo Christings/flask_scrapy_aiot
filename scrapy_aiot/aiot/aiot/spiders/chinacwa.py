@@ -48,7 +48,7 @@ class ChinacwaSpider(CrawlSpider):
             '//div[@class="content"]/div[@class="content_left"]/div[1]/div[1]/div[2]/p').xpath('string(.)').extract()
         print("article_content:", article_content)
 
-        item['article_url'] = int(article_url.split('/')[-1].split('.')[0])
+        item['article_id'] = int(article_url.split('/')[-1].split('.')[0])
         item['article_title'] = article_title
         item['article_keywords'] = article_keywords
         item['article_url'] = article_url
