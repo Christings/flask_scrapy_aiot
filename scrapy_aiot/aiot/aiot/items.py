@@ -49,3 +49,11 @@ class ProductpriceItem(scrapy.Item):
     product_specification = scrapy.Field()
     product_unit = scrapy.Field()
     product_releasedate = scrapy.Field()
+
+
+# AProductsPrice——全国农产品价格
+class AProductsPriceItem(scrapy.Item):
+    product_name = scrapy.Field()
+    product_price = scrapy.Field()
+    product_market = scrapy.Field()
+    product_releasedate = scrapy.Field()
