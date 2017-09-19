@@ -28,17 +28,17 @@
         <div id="container">
 
             <div id="tfheader">
-                <form class="bs-example bs-example-form" role="form">
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="search">
-                                <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
+                <form name="searchform" id="tfsearch" method="POST" action="/search">
+                    {#   <input type="text" class="tfinput" name="text" size="50" maxlength="200" placeholder="name, rating, genre, year">#}
+                    {#   <input type="submit" value=">" class="tfbutton">#}
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="text" placeholder="search">
+                            <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
                     </span>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
-                    </div><!-- /.row -->
+                        </div><!-- /input-group -->
+                    </div>
                 </form>
                 <div class="tfclear"></div>
             </div>
