@@ -6,7 +6,7 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy_aiot.aiot.aiot.items import ProductpriceItem
 from scrapy.selector import Selector
 
-
+# 农产品价格
 class ProductpriceSpider(Spider):
     name = 'ProductpriceSpider'
     allowed_domain = ['xinfadi.com.cn']
