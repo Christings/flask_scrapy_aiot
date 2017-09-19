@@ -2,13 +2,18 @@ from . import mongo
 
 
 class Chinacwa(mongo.Document):
+    article_id = mongo.IntField(required=True)
     article_title = mongo.StringField(required=True)
     article_keywords = mongo.StringField(required=True)
     article_url = mongo.StringField(required=True)
     article_abstract = mongo.StringField(required=True)
     article_content = mongo.StringField(required=True)
 
-    meta = {'collection': 'chinacwa'}
+    meta = {
+        'collection': 'chinacwa',
+        'ordering': ['-article_id'],
+        'indexes': ['-article_id']
+    }
 
 
 class Iot(mongo.Document):
@@ -51,4 +56,3 @@ class Movies(mongo.Document):
         'ordering': ['-rating'],
         'indexes': ['genre', 'produced', '-rating']
     }
-

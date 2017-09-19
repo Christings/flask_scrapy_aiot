@@ -21,11 +21,14 @@ def index():
 
 @main.route('/show_chinacwa/', methods=['GET'])
 def ShowChinacwaView():
+    cnt=Chinacwa.objects.count()
+    # limit=cnt*int(10)/
+
     page=request.args.get('page',1,type=int)
     pagination = Chinacwa.objects.paginate(page=page, per_page=10,error_out=False)
     chinacwa=pagination.items
     # chinacwa = Chinacwa.objects.all()
-    return render_template('list.html', articles=chinacwa, pagination_chinacws=pagination)
+    return render_template('list.html', articles=chinacwa, pagination_chinacwa=pagination)
 
 
 @main.route('/show_iot/', methods=['GET'])
@@ -42,3 +45,35 @@ def ShowNy135View(page=1):
     pagination = Ny135.objects.paginate(page=page, per_page=20)
     ny135 = pagination.items
     return render_template('list.html', articles=ny135,pagination_ny135=pagination)
+
+
+
+@main.route('/search',methods=['POST'])
+def SearchView():
+    text=request.form['text']
+
+    articles = []
+    try:
+        articles = Chinacwa.objects(article_id=int(text))
+
+    except ValueError:
+        # still numbers
+        try:
+            articles = Chinacwa.objects(article_abstract__icontains=text)
+
+            # if we found nothing we intentionally raise an error
+            # and we jump to the non-numeric checks
+            if not articles:
+                raise ValueError
+
+        # text is not numeric
+        except ValueError:
+
+            # search by movie name
+            articles = Chinacwa.objects(article_title__icontains=text)
+
+            if not articles:
+                # text is genre
+                articles = Chinacwa.objects(article_keywords__icontains=text)
+
+    return render_template('list.html', articles=articles)
