@@ -10,6 +10,7 @@ from scrapy.conf import settings
 from .items import ChinacwaItem
 from .items import IotItem
 from .items import Ny135Item
+from scrapy_aiot.aiot.aiot.items import ProductpriceItem
 
 
 # 农业物联网
@@ -21,6 +22,7 @@ class AiotPipeline(object):
         self.chinacwa = self.db['chinacwa']
         self.iot = self.db['iot']
         self.ny135 = self.db['ny135']
+        self.productprice = self.db['productprice']
 
     def process_item(self, item, spider):
         if isinstance(item, ChinacwaItem):
@@ -49,4 +51,13 @@ class AiotPipeline(object):
                     print("插入")
                     return item
             except Exception as e:
-                spider.logger.exceptionn("")
+                spider.logger.exceptionn("ny135存储失败")
+        elif isinstance(item, ProductpriceItem):
+            try:
+                if item["product_name"]:
+                    item = dict(item)
+                    self.productprice.insert(item)
+                    print("农产品价格数据")
+                    return item
+            except Exception as e:
+                spider.logger.exceptionn("农产品价格数据存储失败")
