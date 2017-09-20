@@ -52,7 +52,7 @@ class ProductpriceItem(scrapy.Item):
 
 
 # AProductsPrice——全国农产品价格
-class AProductsPriceItem(scrapy.Item):
+class AllProductsPriceItem(scrapy.Item):
     product_name = scrapy.Field()
     product_price = scrapy.Field()
     product_market = scrapy.Field()
