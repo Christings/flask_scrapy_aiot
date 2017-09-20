@@ -11,6 +11,7 @@ from .items import ChinacwaItem
 from .items import IotItem
 from .items import Ny135Item
 from scrapy_aiot.aiot.aiot.items import ProductpriceItem
+from scrapy_aiot.aiot.aiot.items import AllProductsPriceItem
 
 
 # 农业物联网
@@ -23,6 +24,7 @@ class AiotPipeline(object):
         self.iot = self.db['iot']
         self.ny135 = self.db['ny135']
         self.productprice = self.db['productprice']
+        self.allproductprice = self.db['allproductprice']
 
     def process_item(self, item, spider):
         if isinstance(item, ChinacwaItem):
@@ -61,3 +63,12 @@ class AiotPipeline(object):
                     return item
             except Exception as e:
                 spider.logger.exceptionn("农产品价格数据存储失败")
+        elif isinstance(item, AllProductsPriceItem):
+            try:
+                if item["product_name"]:
+                    item = dict(item)
+                    self.allproductprice.insert(item)
+                    print("全国农产品价格数据")
+                    return item
+            except Exception as e:
+                spider.logger.exceptionn("全国农产品价格数据存储失败")
