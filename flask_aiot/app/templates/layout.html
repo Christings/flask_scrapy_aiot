@@ -21,13 +21,14 @@
                     <li><a href="/show_chinacwa">中国智慧农业网</a></li>
                     <li><a href="/show_iot">国家农业物联网</a></li>
                     <li><a href="/show_ny135">中国农业物联网</a></li>
+                    <li><a href="/show_allproductprice">农产品价格</a></li>
                 </ul>
             </div>
         </div>
 
         <div id="container">
-
-            <div id="tfheader">
+            {% block search %}
+                <div id="tfheader">
                 <form name="searchform" id="tfsearch" method="POST" action="/search">
                     {#   <input type="text" class="tfinput" name="text" size="50" maxlength="200" placeholder="name, rating, genre, year">#}
                     {#   <input type="submit" value=">" class="tfbutton">#}
@@ -42,8 +43,13 @@
                 </form>
                 <div class="tfclear"></div>
             </div>
+            {% endblock %}
+
 
             {% block content %}
+            {% endblock %}
+
+            {% block pricedata %}
             {% endblock %}
 
         </div>

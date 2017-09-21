@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% import "_macros.html" as macros %}
+
+{% block search %}
+    <div>bbb</div>
+{% endblock %}
+
+{% block pricedata %}
+    {{ super() }}
+    <div id="products">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>价格</th>
+                <th>所属市场</th>
+                <th>发布日期</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.product_name }}</td>
+                    <td>{{ product.product_price }}</td>
+                    <td>{{ product.product_market }}</td>
+                    <td>{{ product.product_releasedate }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+    {% if pagination_allproductprice %}
+        <ul class="pagination">
+            {{ macros.pagination_widget(pagination_allproductprice, '.ShowAllProductPriceView') }}
+        </ul>
+    {% endif %}
+
+{% endblock %}
+
+
