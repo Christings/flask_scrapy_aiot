@@ -4,6 +4,7 @@ from ..models import Movies
 from ..models import Chinacwa
 from ..models import Iot
 from ..models import Ny135
+from ..models import AllProductPrice
 
 from . import main
 from datetime import datetime
@@ -21,36 +22,43 @@ def index():
 
 @main.route('/show_chinacwa/', methods=['GET'])
 def ShowChinacwaView():
-    cnt=Chinacwa.objects.count()
+    cnt = Chinacwa.objects.count()
     # limit=cnt*int(10)/
 
-    page=request.args.get('page',1,type=int)
-    pagination = Chinacwa.objects.paginate(page=page, per_page=10,error_out=False)
-    chinacwa=pagination.items
+    page = request.args.get('page', 1, type=int)
+    pagination = Chinacwa.objects.paginate(page=page, per_page=10, error_out=False)
+    chinacwa = pagination.items
     # chinacwa = Chinacwa.objects.all()
     return render_template('list.html', articles=chinacwa, pagination_chinacwa=pagination)
 
 
 @main.route('/show_iot/', methods=['GET'])
 def ShowIotView(page=1):
-    page=request.args.get('page',1,type=int)
+    page = request.args.get('page', 1, type=int)
     pagination = Iot.objects.paginate(page=page, per_page=20)
     iot = pagination.items
-    return render_template('list.html', articles=iot,pagination_iot=pagination)
+    return render_template('list.html', articles=iot, pagination_iot=pagination)
 
 
 @main.route('/show_ny135/', methods=['GET'])
 def ShowNy135View(page=1):
-    page=request.args.get('page',1,type=int)
+    page = request.args.get('page', 1, type=int)
     pagination = Ny135.objects.paginate(page=page, per_page=20)
     ny135 = pagination.items
-    return render_template('list.html', articles=ny135,pagination_ny135=pagination)
+    return render_template('list.html', articles=ny135, pagination_ny135=pagination)
 
 
+@main.route('/show_allproductprice/', methods=['GET'])
+def ShowAllProductPriceView():
+    page = request.args.get('page', 1, type=int)
+    pagination = AllProductPrice.objects.paginate(page=page, per_page=20)
+    allproductprice = pagination.items
+    return render_template('PriceDataList.html', products=allproductprice, pagination_allproductprice=pagination)
 
-@main.route('/search',methods=['POST'])
+
+@main.route('/search', methods=['POST'])
 def SearchView():
-    text=request.form['text']
+    text = request.form['text']
 
     articles = []
     try:
