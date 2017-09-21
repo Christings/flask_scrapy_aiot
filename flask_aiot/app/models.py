@@ -35,6 +35,14 @@ class Ny135(mongo.Document):
     meta = {'collection': 'ny135'}
 
 
+class AllProductPrice(mongo.Document):
+    product_name = mongo.StringField(required=True)
+    product_price = mongo.StringField(required=True)
+    product_market = mongo.StringField(required=True)
+    product_releasedate = mongo.StringField(required=True)
+    meta = {'collection': 'allproductprice'}
+
+
 class Movies(mongo.Document):
     movie_id = mongo.StringField(required=True)
     rating = mongo.FloatField(required=True)
