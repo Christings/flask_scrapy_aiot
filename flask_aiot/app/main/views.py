@@ -85,3 +85,32 @@ def SearchView():
                 articles = Chinacwa.objects(article_keywords__icontains=text)
 
     return render_template('list.html', articles=articles)
+
+@main.route('/searchproduct', methods=['POST'])
+def SearchProductView():
+    text = request.form['text']
+
+    try:
+        products = AllProductPrice.objects(product_price__icontains=float(text))
+
+    except ValueError:
+        # still numbers
+        try:
+            products = AllProductPrice.objects(product_name__icontains=text)
+
+            # if we found nothing we intentionally raise an error
+            # and we jump to the non-numeric checks
+            if not products:
+                raise ValueError
+
+        # text is not numeric
+        except ValueError:
+
+            # search by movie name
+            products = AllProductPrice.objects(article_market__icontains=text)
+
+            if not products:
+                # text is genre
+                products = AllProductPrice.objects(article_releasedate__icontains=text)
+
+    return render_template('PriceDataList.html', products=products)
