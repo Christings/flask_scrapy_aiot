@@ -2,7 +2,19 @@
 {% import "_macros.html" as macros %}
 
 {% block search %}
-    <div>bbb</div>
+    <div id="tfheader">
+        <form name="searchproduct" id="productsearch" method="POST" action="/searchproduct">
+            <div class="col-sm-11">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="text" placeholder="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+        </form>
+        <div class="tfclear"></div>
+    </div>
 {% endblock %}
 
 {% block pricedata %}
