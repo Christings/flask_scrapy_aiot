@@ -1,10 +1,10 @@
-{% extends "layout.html" %}
+{% extends "index.html" %}
 {% import "_macros.html" as macros %}
 
 {% block search %}
     <div id="tfheader">
         <form name="searchproduct" id="productsearch" method="POST" action="/searchproduct">
-            <div class="col-sm-11">
+            <div class="col-sm-3">
                 <div class="input-group">
                     <input type="text" class="form-control" name="text" placeholder="search">
                     <span class="input-group-btn">
@@ -17,9 +17,8 @@
     </div>
 {% endblock %}
 
-{% block pricedata %}
-    {{ super() }}
-    <div id="products">
+{% block content %}
+    <div id="products" style="margin: 20px 200px">
         <table class="table table-striped">
             <thead>
             <tr>

@@ -1,8 +1,26 @@
-{% extends "layout.html" %}
+{#{% extends "layout.html" %}#}
+{% extends "index.html" %}
 {% import "_macros.html" as macros %}
+{% block search %}
+    <div id="tfheader">
+        <form name="searchform" id="tfsearch" method="POST" action="/search">
+            {#   <input type="text" class="tfinput" name="text" size="50" maxlength="200" placeholder="name, rating, genre, year">#}
+            {#   <input type="submit" value=">" class="tfbutton">#}
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="text" placeholder="search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+        </form>
+        <div class="tfclear"></div>
+    </div>
+{% endblock %}
 
 {% block content %}
-    {{ super() }}
+
     <div id="entries">
         <ul>
             {% for article in articles %}
@@ -10,19 +28,26 @@
                     <div class="name-year">
                         <a href="{{ article.article_url }}">{{ article.article_title }}</a>
                     </div>
+                    {% if article.article_keywords %}
+                        <div class="rating-base">
+                            <a>{{ article.article_keywords }}</a>
+                            <span> ---- </span>
+                            <a href="{{ article.article_url }}">{{ article.article_url }}</a>
+                        </div>
+                    {% else %}
+                        <div class="rating-base">
+                            <a href="{{ article.article_url }}">{{ article.article_url }}</a>
+                        </div>
+                    {% endif %}
 
-                    <div class="rating-base">
-                        <a>{{ article.article_keywords }}</a>
-                        <span> ---- </span>
-                        <a href="{{ article.article_url }}">{{ article.article_url }}</a>
-                    </div>
 
                     <div class="description"> {{ article.article_abstract }}</div>
                 </li>
             {% endfor %}
         </ul>
-    </div>
 
+
+    </div>
 
     {% if pagination_chinacwa %}
         <ul class="pagination">

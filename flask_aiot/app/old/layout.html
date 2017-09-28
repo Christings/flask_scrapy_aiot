@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>AIOT</title>
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    {% extends "bootstrap/base.html" %}
+
+</head>
+{% block body %}
+    <body OnLoad="document.searchform.text.focus();">
+
+    <header>AIOT</header>
+
+    <div id="main">
+        <div id="nav">
+            <div id="naventries">
+                <ul class="nav nav-pills nav-stacked">
+
+                    <li><a href="/show_chinacwa">中国智慧农业网</a></li>
+                    <li><a href="/show_iot">国家农业物联网</a></li>
+                    <li><a href="/show_ny135">中国农业物联网</a></li>
+                    <li><a href="/show_allproductprice">农产品价格</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="container">
+            {% block search %}
+                <div id="tfheader">
+                <form name="searchform" id="tfsearch" method="POST" action="/search">
+                    {#   <input type="text" class="tfinput" name="text" size="50" maxlength="200" placeholder="name, rating, genre, year">#}
+                    {#   <input type="submit" value=">" class="tfbutton">#}
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="text" placeholder="search">
+                            <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                        </div><!-- /input-group -->
+                    </div>
+                </form>
+                <div class="tfclear"></div>
+            </div>
+            {% endblock %}
+
+
+            {% block content %}
+            {% endblock %}
+
+            {% block pricedata %}
+            {% endblock %}
+
+        </div>
+
+        <div id="aside">
+        </div>
+    </div>
+
+    <footer>scrappy - mongodb - flask</footer>
+
+    </body>
+{% endblock %}
+
+</html>

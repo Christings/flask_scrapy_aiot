@@ -1,5 +1,220 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>农业物联网</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
 
-{#{% block content %}#}
-{#    <img src="{{ url_for('static', filename='movie.png') }}"></img>#}
-{#{% endblock %}#}
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ url_for('static', filename='css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ url_for('static', filename='css/flickerplate.css') }}" rel="stylesheet" type="text/css" media="all"/>
+
+    <!-- js -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/move-top.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/easing.js') }}"></script>
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+
+{% block body %}
+    <body OnLoad="document.searchform.text.focus();">
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logo">
+                        <h1><a class="navbar-brand" href="index.html">农业物联网----AIOT</a></h1>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <nav>
+                        <ul class="nav navbar-nav" id="myli">
+                            <li class="active"><a href="/">首页</a></li>
+                            <li><a href="/show_chinacwa" class="hvr-sweep-to-bottom">中国智慧农业网</a></li>
+                            <li><a href="/show_iot" class="hvr-sweep-to-bottom">国家农业物联网</a></li>
+                            <li><a href="/show_ny135" class="hvr-sweep-to-bottom">中国农业物联网</a></li>
+                            <li><a href="/show_allproductprice" class="hvr-sweep-to-bottom">农产品价格</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% block search %}
+                {% endblock %}
+            </nav>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- banner -->
+    {% block content %}
+
+        <div class="banner">
+            <div class="container">
+                <div class="banner_bg">
+                    <section class="slider">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3>农业基础性长期性科技工作是对农业生产要素及其动态变化进行科学观察、观测和记录…</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3>到2020年，布局550个左右国家农业科学试验站，建立1个国家农业科技数据中心…</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3>数据资源覆盖了作物资源、土壤质量、农业环境、植物保护、畜禽养殖、动物病害、农业微生物、渔业科学…</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <h3>监测指标是指所监测的具体内容项，监测指标的名称是唯一的，在不同的领域，同一名称所指的监测…</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- flexSlider -->
+                    <link href="{{ url_for('static', filename='css/flexslider.css') }}" rel="stylesheet" type="text/css"
+                          media="screen" property=""/>
+
+                    <script defer src="{{ url_for('static', filename='js/jquery.flexslider.js') }}"></script>
+
+                    <script type="text/javascript">
+                        $(window).load(function () {
+                            $('.flexslider').flexslider({
+                                animation: "slide",
+                                start: function (slider) {
+                                    $('body').removeClass('loading');
+                                }
+                            });
+                        });
+                    </script>
+                    <!-- //flexSlider -->
+                </div>
+            </div>
+            <div class="w3l_banner_info">
+                <div class="container">
+                    <div class="col-md-4 w3l_banner_info_left">
+                        <div class="col-xs-4 w3l_banner_info_left_grid">
+                            <div class="w3l_banner_info_left_grid1">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 w3l_banner_info_left_grid_left">
+                            <h3><a href="single.html">监测数据</a></h3>
+                            <p>数据集的分类、目录</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-4 w3l_banner_info_left">
+                        <div class="col-xs-4 w3l_banner_info_left_grid">
+                            <div class="w3l_banner_info_left_grid1">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 w3l_banner_info_left_grid_left">
+                            <h3><a href="single.html">监测指标</a></h3>
+                            <p>单个指标的导航</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-4 w3l_banner_info_left">
+                        <div class="col-xs-4 w3l_banner_info_left_grid">
+                            <div class="w3l_banner_info_left_grid1">
+                                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 w3l_banner_info_left_grid_left">
+                            <h3><a href="news.html">新闻动态</a></h3>
+                            <p>各监测中心、站点的最新动态</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    <!-- //banner -->
+    <!-- footer -->
+    {#    {% block footer %}#}
+    <div class="footer">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                flask
+            </nav>
+        </div>
+    </div>
+    {#    {% endblock %}#}
+    <!-- footer -->
+
+    <!-- for bootstrap working -->
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
+    <!-- //for bootstrap working -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+             var defaults = {
+             containerID: 'toTop', // fading element id
+             containerHoverID: 'toTopHover', // fading element hover id
+             scrollSpeed: 1200,
+             easingType: 'linear'
+             };
+             */
+
+            $().UItoTop({easingType: 'easeOutQuart'});
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- flicker -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/flickerplate.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.flicker-example').flicker();
+        });
+    </script>
+    <!-- //flicker -->
+    </body>
+{% endblock %}
+</html>

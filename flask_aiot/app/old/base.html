@@ -1,0 +1,38 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Flasky{% endblock %}
+{% block navbar %}
+
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                        data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">农业物联网</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/show_chinacwa">中国智慧农业网</a></li>
+                    <li><a href="/show_iot">国家农业物联网</a></li>
+                    <li><a href="/show_ny135">中国农业物联网</a></li>
+                    <li><a href="/dontwatch">Don't Watch</a></li>
+                    <li><a href="/showall">Show All</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        {% block page_content %}{% endblock %}
+    </div>
+
+{% endblock %}
+
