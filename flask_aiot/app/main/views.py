@@ -91,7 +91,7 @@ def SearchProductView():
     text = request.form['text']
 
     try:
-        products = AllProductPrice.objects(product_price__icontains=float(text))
+        products = AllProductPrice.objects(product_price__icontains=text)
 
     except ValueError:
         # still numbers
@@ -107,10 +107,10 @@ def SearchProductView():
         except ValueError:
 
             # search by movie name
-            products = AllProductPrice.objects(article_market__icontains=text)
+            products = AllProductPrice.objects(product_market__icontains=text)
 
             if not products:
                 # text is genre
-                products = AllProductPrice.objects(article_releasedate__icontains=text)
+                products = AllProductPrice.objects(product_releasedate__icontains=text)
 
     return render_template('PriceDataList.html', products=products)
