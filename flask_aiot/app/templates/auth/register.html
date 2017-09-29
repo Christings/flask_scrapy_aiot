@@ -1,13 +1,44 @@
-{% extends "index.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-
-{% block title %}Flasky - Register{% endblock %}
-
-{% block content %}
-<div class="page-header">
-    <h1>Register</h1>
-</div>
-<div class="col-md-4">
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boundary Sign in Form Flat Responsive Widget Template :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords"
+          content="Boundary Sign in Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- Custom Theme files -->
+    <link href="{{ url_for('static', filename='css/style_auth.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    {% import "bootstrap/wtf.html" as wtf %}
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href='//fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <!-- //web font -->
+</head>
+<body>
+<h1>农业物联网</h1>
+<!--form-stars-here-->
+<div class="login-form w3-agile">
+    <h2>注册</h2>
     {{ wtf.quick_form(form) }}
 </div>
-{% endblock %}
+<!--//form-ends-here-->
+<!-- copyright -->
+<div class="copyright w3-agile">
+    <p> © 2016 Boundary Sign in Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+    </p>
+</div>
+<!-- //copyright -->
+</body>
+</html>
