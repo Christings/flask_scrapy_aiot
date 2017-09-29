@@ -21,6 +21,87 @@ ul,label{
 body a:hover{
 	text-decoration:none;
 }
+
+/*-- container --*/
+#entries {
+    margin: 4px;
+    padding: 5px;
+    border: 0px solid #cccc33;
+    border-radius: 7pt;
+    background: #DBE3E7;
+}
+
+#entries ul {
+    list-style: none;
+    padding: 20px 200px;
+}
+
+#entries li {
+    border: 0px solid orange;
+    padding: 0.4em;
+    margin: 0px 5px 8px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.name-year {
+    background-color: #ffffff;
+    color: #31344A;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    padding: 5px;
+    margin-bottom: 2px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-top: 0px solid #0076a3;
+}
+
+.name-year a {
+    font-size: 22px;
+    color: black;
+}
+
+.rating-base {
+    background-color: #ffffff;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    padding: 5px;
+    margin-bottom: 2px;
+}
+
+.rating-base a {
+    font-weight: bold;
+    color: black;
+}
+
+.base {
+    color: black;
+}
+
+.description {
+    background-color: #ffffff;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px;
+    margin-bottom: 2px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+}
+
+/*-- 页数 --*/
+.pagination{
+    text-align: center;
+    margin-left: 250px;
+    font-size: 25px;
+    color: black;
+}
+/*.pagination ul li a{*/
+    /*color: black;;*/
+/*}*/
+
 /*-- header --*/
 input[type="submit"],.w3l_banner_info_left_grid_left h3 a,.w3agile_footer_copy p a,.reply a,.agile_cat_grid_tags ul li a:hover,.agile_cat_grid ul.categories li a,.w3l_admin a,.w3ls_single_left_grid_right ul li a,.wthree_features_services_grid h4 a,.agile_services_bottom_grid_left_grid a,.simplefilter li,.agileinfo_footer_grid ul li a,.w3l_banner_info_left_grid1,.agile_blog_grid h4 a{
 	transition: .5s ease-in;
@@ -773,7 +854,7 @@ ul.agileits_social_icons li{
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -1044,7 +1125,7 @@ li.list-group-item1 {
 .label {
   font-weight: 300 !important;
   border-radius:4px;
-}  
+}
 .grid_5{
 	background:none;
 	padding:2em 0;
@@ -1449,7 +1530,7 @@ h2.typoh2{
     position: relative;
     padding-bottom: .5em;
 }
-.wthree_recent h4:after,.agileits_three_comments h3:after,.w3_leave_comment h3:after{	
+.wthree_recent h4:after,.agileits_three_comments h3:after,.w3_leave_comment h3:after{
 	content:'';
 	position:absolute;
 	bottom:0%;
@@ -2007,7 +2088,7 @@ h2.typoh2{
 	}
 	.navbar-toggle {
 		margin:1.7em 0 0;
-	}	
+	}
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 		border: none;
 	}
