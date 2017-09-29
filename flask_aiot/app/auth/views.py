@@ -11,7 +11,8 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         try:
-            user = User.objects.get(username=form.username.data)
+            # user = User.objects.get(username=form.username.data)
+            user = User.objects.get(email=form.email.data)
         except User.DoesNotExist:
             user = None
         # if user is not None and user.verify_password(form.password.data):
