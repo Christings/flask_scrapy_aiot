@@ -72,17 +72,17 @@ class User(UserMixin, mongo.Document):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.email
 
     def get_id(self):
         try:
             # return unicode(self.username)
-            return self.username
+            return self.email
         except AttributeError:
             raise NotImplementedError('No `username` attribute - override `get_id`')
 
     def __unicode__(self):
-        return self.username
+        return self.email
 
         # def confirm(self,token):
         #     s=Serializer(current_app.config['SECRET_KEY'])
@@ -96,9 +96,9 @@ class User(UserMixin, mongo.Document):
 
 
 @login_manager.user_loader
-def load_user(username):
+def load_user(email):
     try:
-        user = User.objects.get(username=username)
+        user = User.objects.get(email=email)
     except User.DoesNotExist:
         user = None
     return user
