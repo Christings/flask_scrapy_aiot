@@ -53,11 +53,8 @@ class User(UserMixin, mongo.Document):
     username = mongo.StringField(max_length=255, requires=True)
     # password = mongo.StringField(requires=True)
     password_hash = mongo.StringField(requires=True)
-
     # confirmed=mongo.BooleanField(default=False)
-
     # password_hash = mongo.StringField(requires=True)
-    # confirmed = mongo.BooleanField(requires=True)
     # meta = {'collection': 'user'}
 
     @property
@@ -103,25 +100,3 @@ def load_user(email):
         user = None
     return user
 
-
-class Movies(mongo.Document):
-    movie_id = mongo.StringField(required=True)
-    rating = mongo.FloatField(required=True)
-    rating_cnt = mongo.IntField(required=True)
-    released = mongo.StringField(required=True)
-    name = mongo.StringField(required=True)
-    inserted = mongo.DateTimeField(required=True)
-    img_src = mongo.StringField(required=True)
-    genre = mongo.ListField(mongo.StringField(), required=True)
-    description = mongo.StringField(required=True)
-    duration = mongo.IntField(required=True)
-    writer = mongo.ListField(mongo.StringField(), required=True)
-    produced = mongo.DateTimeField(required=True)
-    cast = mongo.ListField(mongo.StringField(), required=True)
-    director = mongo.ListField(mongo.StringField(), required=True)
-
-    # definition of default ordering and desired indexes
-    meta = {
-        'ordering': ['-rating'],
-        'indexes': ['genre', 'produced', '-rating']
-    }

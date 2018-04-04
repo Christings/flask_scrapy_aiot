@@ -1,0 +1,1 @@
+@"d:\workspace\flaskproiects\flasky\venv\scripts\python.exe" "d:\workspace\flaskproiects\flasky\venv\Scripts\markdown_py" %*

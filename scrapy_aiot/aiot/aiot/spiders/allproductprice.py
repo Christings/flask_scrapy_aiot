@@ -59,5 +59,5 @@ class AllProductsPriceSpider(CrawlSpider):
         for i in range(2,int(next_page)):
             print(response.url)
             url = response.url + "&page=" + str(i)
-            print("url:", url)
+            print("请求的url:", url)
             yield scrapy.Request(url=url, callback=self.parse_item)

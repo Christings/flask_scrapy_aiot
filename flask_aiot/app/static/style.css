@@ -6,17 +6,17 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #F9F9F9;
-    font-family: 'Lobster', Georgia, Times, serif;
-    color: #31344A;
-    text-align: left;
-    font-size: 35px;
-    padding: 10px;
-    padding-left: 40px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid rgba(113, 101, 93, 0.47);
-}
+/*header {*/
+    /*background-color: #F9F9F9;*/
+    /*font-family: 'Lobster', Georgia, Times, serif;*/
+    /*color: #31344A;*/
+    /*text-align: left;*/
+    /*font-size: 35px;*/
+    /*padding: 10px;*/
+    /*padding-left: 40px;*/
+    /*margin-bottom: 5px;*/
+    /*border-bottom: 1px solid rgba(113, 101, 93, 0.47);*/
+/*}*/
 
 footer {
     background-color: #F9F9F9;
