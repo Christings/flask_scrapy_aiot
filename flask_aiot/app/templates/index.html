@@ -76,11 +76,17 @@
                 <div class="collapse navbar-collapse nav-wil" id="bs-exam   ple-navbar-collapse-1">
                     <nav>
                         <ul class="nav navbar-nav" id="myli">
-                            <li class="active"><a href="/">首页</a></li>
-                            <li><a href="/show_chinacwa" class="hvr-sweep-to-bottom">中国智慧农业网</a></li>
-                            <li><a href="/show_iot" class="hvr-sweep-to-bottom">国家农业物联网</a></li>
-                            <li><a href="/show_ny135" class="hvr-sweep-to-bottom">中国农业物联网</a></li>
-                            <li><a href="/show_allproductprice" class="hvr-sweep-to-bottom">农产品价格</a></li>
+{#                            <li class="active"><a href="/">首页</a></li>#}
+{#                            <li><a href="/show_chinacwa" class="hvr-sweep-to-bottom">中国智慧农业网</a></li>#}
+{#                            <li><a href="/show_iot" class="hvr-sweep-to-bottom">国家农业物联网</a></li>#}
+{#                            <li><a href="/show_ny135" class="hvr-sweep-to-bottom">中国农业物联网</a></li>#}
+
+                            <li class="active"><a href="{{ url_for('main.index') }}">首页</a></li>
+                            <li><a href="{{ url_for('main.ShowChinacwaView') }}" class="hvr-sweep-to-bottom">中国智慧农业网</a></li>
+                            <li><a href="{{ url_for('main.ShowIotView') }}" class="hvr-sweep-to-bottom">国家农业物联网</a></li>
+                            <li><a href="{{ url_for('main.ShowNy135View') }}" class="hvr-sweep-to-bottom">中国农业物联网</a></li>
+                            <li><a href="{{ url_for('main.ShowAllProductPriceView') }}" class="hvr-sweep-to-bottom">农产品价格</a></li>
+
                         </ul>
                     </nav>
                 </div>
