@@ -6,12 +6,14 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import pymongo
-from scrapy.conf import settings
+# from scrapy.conf import settings
 from .items import ChinacwaItem
 from .items import IotItem
 from .items import Ny135Item
 from scrapy_aiot.aiot.aiot.items import ProductpriceItem
 from scrapy_aiot.aiot.aiot.items import AllProductsPriceItem
+from scrapy.utils.project import get_project_settings
+settings = get_project_settings()
 
 
 # 农业物联网
