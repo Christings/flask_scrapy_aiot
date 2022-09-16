@@ -21,7 +21,7 @@ ForgeryPy==0.1
 html5lib==0.999999999
 itsdangerous==0.24
 Jinja2==2.9.6
-Mako==1.0.7
+Mako==1.2.2
 Markdown==2.6.9
 MarkupSafe==1.0
 mongoengine==0.13.0
